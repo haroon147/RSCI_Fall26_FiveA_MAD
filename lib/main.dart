@@ -31,16 +31,14 @@ class FiveAWidget extends StatelessWidget {
         height: 200,
         width: 400,
         color: Colors.grey,
-        child: Center(
-          child: Text("Hi I'm Container Child",
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-              fontSize: 50,
-              color: Colors.white60,
-              backgroundColor: Colors.orange,
-            ),
-          ),
-        ),
+        child: Column(
+          children: [
+            Text("Hi"),
+            Icon(Icons.ac_unit),
+            ElevatedButton(onPressed: (){},
+                child: Text("Button "))
+          ],
+        )
       ),
 
     );
@@ -56,3 +54,14 @@ class FiveAWidget extends StatelessWidget {
 // wordSpacing: 5,
 // ),),
 
+//
+// Center(
+// child: Text("Hi I'm Container Child",
+// style: TextStyle(
+// fontWeight: FontWeight.w900,
+// fontSize: 50,
+// color: Colors.white60,
+// backgroundColor: Colors.orange,
+// ),
+// ),
+// ),
