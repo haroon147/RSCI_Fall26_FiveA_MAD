@@ -1,20 +1,39 @@
 
+import 'package:fall_five_a_class_rsci/arham.dart';
 import 'package:flutter/material.dart';
 
 
 void main(){
   runApp(MaterialApp(
-    home: FiveAWidget()
+    home: ArhamWidget()
   ));
 }
 
 
-class FiveAWidget extends StatelessWidget {
+class FiveAWidget extends StatefulWidget {
+  @override
+  State<FiveAWidget> createState() => _FiveAWidgetState();
+}
+
+
+
+
+class _FiveAWidgetState extends State<FiveAWidget> {
+  var Value =0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
 
-      backgroundColor: Colors.cyan,
+        Value++;
+        print(Value);
+        setState(() {
+
+        });
+
+      },
+      child: Icon(Icons.add),),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.green,
@@ -28,17 +47,51 @@ class FiveAWidget extends StatelessWidget {
         ),
       ),
       body: Container(
-        height: 200,
-        width: 400,
-        color: Colors.grey,
-        child: Column(
-          children: [
-            Text("Hi"),
-            Icon(Icons.ac_unit),
-            ElevatedButton(onPressed: (){},
-                child: Text("Button "))
-          ],
-        )
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors:[
+              Colors.grey,
+              Colors.cyan,
+              Colors.deepOrange,
+              ],
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft),
+        ),
+        child: Container(
+          height: MediaQuery.of(context).size.height*1,
+          width: MediaQuery.of(context).size.width*1,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("Hi  " + Value.toString(),
+                  style: TextStyle(fontWeight: FontWeight.w900,fontSize: 50,color: Colors.white),),
+                // Container(
+                //   height: 100,
+                //   width: 200,
+                //   color: Colors.indigo,
+                // ),
+                SizedBox(width: 100,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text("I am inside column",
+                        style: TextStyle(fontWeight: FontWeight.w900,fontSize: 30,color: Colors.white)
+                    ),
+                    Container(
+                      height: 100,
+                      width: 200,
+                      color: Colors.indigo,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
+
       ),
 
     );
