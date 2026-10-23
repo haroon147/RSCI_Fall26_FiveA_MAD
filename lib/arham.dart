@@ -43,12 +43,10 @@ class _ArhamWidgetState extends State<ArhamWidget> {
             decoration: InputDecoration(
               hintText: "Password",
               labelText: "Passoword",
-              enabledBorder:
             ),
-obscureText: true,
+      obscureText: true,
             keyboardType: TextInputType.visiblePassword,
-          )
-
+          ),
         ],
       ),
     );

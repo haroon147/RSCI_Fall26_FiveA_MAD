@@ -2,10 +2,14 @@
 import 'package:fall_five_a_class_rsci/arham.dart';
 import 'package:flutter/material.dart';
 
+import 'Week05/bottom_nav.dart';
+import 'Week05/week05home.dart';
+
 
 void main(){
   runApp(MaterialApp(
-    home: ArhamWidget()
+    debugShowCheckedModeBanner: false,
+    home: Week05home()
   ));
 }
 
